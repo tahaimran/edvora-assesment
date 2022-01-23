@@ -4,10 +4,10 @@ import Products from './Products'
 import { Grid } from '@mui/material'
 function SecondSide() {
   return (
-    <Grid   >
+    <Grid  sx={{marginLeft:'15px'}} >
       <Header />
       <Products />
-      <Products />
+      {/* <Products /> */}
 
     </Grid>
   )

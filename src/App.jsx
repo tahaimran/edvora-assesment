@@ -8,6 +8,7 @@ import { Paper, Grid } from '@mui/material'
 function App() {
 
   const [data, setData] = useState([]);
+  const [age, setAge] = useState('');
 
   useEffect(() => {
     getData()
@@ -20,12 +21,12 @@ function App() {
   }
 
   return (
-    <ValueContext.Provider value={{ data }} >
+    <ValueContext.Provider value={{ data,setData, age , setAge }} >
       <Grid container>
-        <Grid item xs={2}>
+        <Grid item sm={2}>
           <FirstSide />
         </Grid>
-        <Grid item xs={10}>
+        <Grid item sm={10}>
           <SecondSide />
         </Grid>
       </Grid>

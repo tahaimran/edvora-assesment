@@ -5,9 +5,9 @@ import { makeStyles } from '@mui/styles'
 
 function Products() {
 
-    let { data } = useContext(ValueContext)
-    // let arr = data.map(e => console.log(e.product_name))
-
+    let { data, setData } = useContext(ValueContext);
+    let {age, setAge} = useContext(ValueContext)
+    let arr = data.map(e => e).filter((e,i) => age == i ? console.log(e):"")
     const productStyle = makeStyles({
         root: {
             background: '#131313',
@@ -24,7 +24,12 @@ function Products() {
             margin: ' 10px',
             padding: '8px',
             background: '#232323',
-            color: 'white'
+            color: 'white',
+            cursor: 'pointer',
+           '&:hover':{
+            transform: 'scale(1.07)',
+            transition: 'all 0.3s ease-in-out'
+        }
 
         },
         mainGrid: {
@@ -43,7 +48,7 @@ function Products() {
 
     return (
         <>
-            <h3 className={classes.head}>Product</h3>
+            <h3 className={classes.head} >Product</h3>
             <hr sx={{width :' 80%'}}/>
             <div className={`${classes.root} page`}>
                 {data.map((e, i) => {
