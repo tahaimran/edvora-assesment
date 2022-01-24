@@ -3,12 +3,16 @@ import axios from 'axios';
 import { ValueContext } from './Config/Context';
 import SecondSide from './Components/secondSide';
 import FirstSide from './Components/FirstSide';
-import { Paper, Grid } from '@mui/material'
+import { Grid } from '@mui/material'
 
 function App() {
 
   const [data, setData] = useState([]);
-  const [age, setAge] = useState('');
+  const [age, setAge] = useState('' );
+  const [state, setState] = useState('')
+  const [city, setCity] = useState('')
+  const [show, setShow] = useState(true)
+  const [showState, setShowState] = useState(false)
 
   useEffect(() => {
     getData()
@@ -21,12 +25,12 @@ function App() {
   }
 
   return (
-    <ValueContext.Provider value={{ data,setData, age , setAge }} >
+    <ValueContext.Provider value={{ showState, setShowState, data,setData, age , setAge, show, setShow,state, setState, city, setCity }} >
       <Grid container>
-        <Grid item sm={2}>
+        <Grid item  sm={2}>
           <FirstSide />
         </Grid>
-        <Grid item sm={10}>
+        <Grid item xs={12}  sm={10}>
           <SecondSide />
         </Grid>
       </Grid>

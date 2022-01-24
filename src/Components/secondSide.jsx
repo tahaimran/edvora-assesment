@@ -7,7 +7,7 @@ function SecondSide() {
     <Grid  sx={{marginLeft:'15px'}} >
       <Header />
       <Products />
-      {/* <Products /> */}
+      <Products />
 
     </Grid>
   )
